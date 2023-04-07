@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+body {
+  background-color: black;
+  color: white;
+}
+.container {
+  width: 1200px;
+  margin: 20px auto;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+nav input {
+  width: 280px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 25px;
+  border: 1px solid white;
+}
+nav button {
+  position: relative;
+  right: 50px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+}
+.social_media a i {
+  color: white;
+  margin: 0 10px;
+  border-radius: 50%;
+  border: 1px solid white;
+  padding: 10px;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+.social_media a .fa-instagram:hover {
+  background-color: white;
+  color: black;
+}
+.social_media a .fa-github:hover {
+  color: black;
+  background-color: white;
+}
+.social_media a .fa-telegram:hover {
+  color: black;
+  background-color: white;
+}
+main {
+  background: #9a81c2;
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 25px;
+}
+main .city_text {
+  /* margin-top: 80px; */
+  font-size: 25px;
+}
+main .city_text .gradus {
+    margin-top: 50%;
+    font-size: 65px;
+}
+main .city_text .gradus .info_weather {
+    font-size: 15px;
+}
+main .city_icon {
+  width: 25%;
+}
+main .city_icon img {
+  width: 100%;
+}
+header {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+header .wind {
+  border-radius: 25px;
+  background-color: #ddba22;
+  width: 48%;
+  padding: 25px;
+}
+header .wind img {
+  width: 150px;
+}
+header .humidity {
+  padding: 25px;
+  border-radius: 25px;
+  width: 48%;
+  border: 1px solid white;
+}
+header .humidity img {
+  width: 150px;
+}
