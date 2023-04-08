@@ -4,50 +4,61 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <script src="/app.js" defer></script>
-    <title>Weather UI</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather web site</title>
   </head>
   <body>
     <div class="container">
       <nav>
         <div class="search">
-          <input type="text" placeholder="Search city" />
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <form action="">
+            <input type="text" placeholder="Search city" />
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
         </div>
         <div class="social_media">
           <a href="instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="facebook"><i class="fa-brands fa-github"></i></i></a>
+          <a href="github"><i class="fa-brands fa-github"></i></a>
           <a href="telegram"><i class="fa-brands fa-telegram"></i></a>
         </div>
       </nav>
       <main>
-        <div class="city_text">
-          <h1>Tashkent</h1>
-          <p>Uzbekistan</p>
-          <div class="gradus">
-          <span class="gradus">35C <span class="info_weather">Cloud</span></span>
-
+        <div class="wrapper">
+          <div class="weather_city">
+            <span class="city_title"
+              ><i class="fa-solid fa-location-dot"></i> Tashkent UZ</span
+            >
+            <div class="temperature">
+              <span class="temp">18°C</span>
+              <span class="temp_max">22°</span>
+              <span class="temp_min">21°</span>
+            </div>
+            <div class="bg_img">
+              <img src="" alt="walpaper">
+            </div>
+          </div>
+          <div class="sunset">
+            <div class="sunset_temp">
+              <span>Quyoshli</span>
+              <span>21</span>
+            </div>
+            <div class="sunset_pm">
+              <span>12.9 PM25</span>
+              <span>12.9 PM25</span>
+              <span>12.9 PM25</span>
+              <span>12.9 PM25</span>
+              <span>12.9 PM25</span>
+            </div>
+          </div>
+          <div class="visibility">
+              
           </div>
         </div>
-        <div class="city_icon">
-          <img src="/icon weather/Cloudy Night.png" alt="weather" />
-        </div>
       </main>
-      <header>
-        <div class="wind">
-          <p>Wind: 55%</p>
-          <img src="/icon weather/wind.png" alt="wind">
-        </div>
-        <div class="humidity">
-          <p>Humidity: 10%</p>
-          <img src="/icon weather/humidity.png" alt="humidity">
-        </div>
-      </header>
     </div>
   </body>
 </html>

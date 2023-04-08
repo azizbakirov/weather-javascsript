@@ -1,105 +1,66 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap");
+:root {
+  /* Fonst start*/
+  --Orbit: "Orbitron", sans-serif;
+  --Montseart: "Montserrat", sans-serif;
+  /* Fonst end*/
+
+  /* Color BG */
+  --BGcolor: #6d68cf;
+  --Pink: #b373c5;
+  /* Color BG end*/
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Raleway", sans-serif;
 }
 body {
-  background-color: black;
-  color: white;
+  background-color: #8c88d8;
 }
 .container {
-  width: 1200px;
-  margin: 20px auto;
+  width: 1000px;
+  margin: 25px auto;
 }
 nav {
   display: flex;
   justify-content: space-between;
 }
-nav input {
-  width: 280px;
-  padding: 10px 20px;
-  font-size: 18px;
-  border-radius: 25px;
-  border: 1px solid white;
+nav input[type="text"] {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  font-family: var(--Montseart);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--BGcolor);
 }
+nav input::placeholder {
+  color: #6d68cf;
+}
+
 nav button {
   position: relative;
-  right: 50px;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 20px;
+  right: 35px;
   border: none;
-  background-color: transparent;
+  background: transparent;
+  font-size: 15px;
+  cursor: pointer;
+  color: var(--BGcolor);
 }
-.social_media a i {
+.social_media{
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+}
+.social_media a{
   color: white;
-  margin: 0 10px;
-  border-radius: 50%;
-  border: 1px solid white;
-  padding: 10px;
-  font-size: 20px;
-  transition: all 0.3s;
-}
-.social_media a .fa-instagram:hover {
-  background-color: white;
-  color: black;
-}
-.social_media a .fa-github:hover {
-  color: black;
-  background-color: white;
-}
-.social_media a .fa-telegram:hover {
-  color: black;
-  background-color: white;
-}
-main {
-  background: #9a81c2;
-  margin-top: 35px;
-  display: flex;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 25px;
-}
-main .city_text {
-  /* margin-top: 80px; */
   font-size: 25px;
+  transition: all .3s;
 }
-main .city_text .gradus {
-    margin-top: 50%;
-    font-size: 65px;
+.social_media a:hover{
+  color: black;
 }
-main .city_text .gradus .info_weather {
-    font-size: 15px;
-}
-main .city_icon {
-  width: 25%;
-}
-main .city_icon img {
-  width: 100%;
-}
-header {
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
-}
-header .wind {
-  border-radius: 25px;
-  background-color: #ddba22;
-  width: 48%;
-  padding: 25px;
-}
-header .wind img {
-  width: 150px;
-}
-header .humidity {
-  padding: 25px;
-  border-radius: 25px;
-  width: 48%;
-  border: 1px solid white;
-}
-header .humidity img {
-  width: 150px;
-}
+/* Fonts */
