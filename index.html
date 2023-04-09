@@ -14,6 +14,9 @@
   <body>
     <div class="container">
       <nav>
+        <div class="logo">
+          <h1>Weather</h1>
+        </div>
         <div class="search">
           <form action="">
             <input type="text" placeholder="Search city" />
@@ -81,14 +84,16 @@
           <div class="weather_temps">
             <div class="wind_vis">
               <div class="temp wind">
-                <span class="title"><i class="fa-solid fa-leaf"></i> Title</span>
+                <span class="title"
+                  ><i class="fa-solid fa-leaf"></i> Title</span
+                >
                 <div class="temp_min">
                   <span>25°</span>
                 </div>
                 <div class="wind_pm">
-                  <span>12.9 PM25</span>
-                  <span>12.9 PM25</span>
-                  <span>12.9 PM25</span>
+                  <p>12.9 <span>PM25</span></p>
+                  <p>12.9 <span>PM25</span></p>
+                  <p>12.9 <span>PM25</span></p>
                 </div>
               </div>
               <div class="temp sunset">
@@ -99,31 +104,39 @@
                 </div>
               </div>
             </div>
-            <div class="temp visibility">
-              <div class="rain">
-                <span>Rain</span>
+            <div class="visibility">
+              <div class="item">
+                <p>Rain</p>
                 <i class="fa-solid fa-cloud-bolt"></i>
-                <span>25°</span>
+                <p>25°</p>
               </div>
-              <div class="rain">
-                <span>Snow</span>
+              <div class="item">
+                <p>Snow</p>
                 <i class="fa-solid fa-bolt"></i>
-                <span>25°</span>
+                <p>25°</p>
               </div>
-              <div class="rain">
-                <span>Sun</span>
+              <div class="item">
+                <p>Sun</p>
                 <i class="fa-solid fa-sun"></i>
-                <span>25°</span>
+                <p>25°</p>
               </div>
-              <div class="rain">
-                <span>Clodus</span>
+              <div class="item">
+                <p>Clodus</p>
                 <i class="fa-solid fa-cloud"></i>
-                <span>25°</span>
+                <p>25°</p>
               </div>
             </div>
           </div>
         </div>
       </main>
+      <footer>
+        <div class="copright">
+          <span>copyright by <a href="">My link</a></span>
+           <a href="https://openweathermap.org/" target="_blank">
+            <img src="/img/logo opentweather.png" alt="">
+          </a>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

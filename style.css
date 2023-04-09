@@ -28,6 +28,13 @@ nav {
   display: flex;
   justify-content: space-between;
 }
+.logo {
+  font-family: var(--Orbit);
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+  margin-top: 5px;
+}
 nav input[type="text"] {
   padding: 15px;
   border-radius: 10px;
@@ -67,18 +74,18 @@ nav button {
 .wrapper {
   display: flex;
   gap: 30px;
+  justify-content: space-between;
   margin-top: 30px;
 }
 .weather_city {
-  background-color: var(--BGcolor);
   width: 50%;
   padding: 25px;
   border-radius: 15px;
-  font-family: var(--Orbit);
+  color: white;
   background-image: url(/img//clouds.png);
+  font-family: var(--Orbit);
   background-size: cover;
   background-position: center;
-  color: white;
 }
 .city_title {
   display: flex;
@@ -86,10 +93,11 @@ nav button {
   gap: 5px;
 }
 .temperature {
-  margin-top: 100px;
+  margin-top: 20%;
   text-align: center;
 }
 .temperature .temp {
+  margin-top: 15px;
   font-size: 80px;
   font-weight: bold;
 }
@@ -98,7 +106,7 @@ nav button {
 }
 
 .wind_temp {
-  margin-top: 100px;
+  margin-top: 20%;
   display: flex;
   justify-content: space-between;
   font-family: var(--Montseart);
@@ -128,32 +136,77 @@ nav button {
   font-size: 12px;
 }
 
-.weather_temps{
+.weather_temps {
+  width: 50%;
 }
 .wind_vis {
-  width: 100%;
   display: flex;
-  gap: 30px;
+  gap: 20px;
   color: white;
   font-family: var(--Montseart);
 }
-.wind_vis .temp{
+.wind_vis .temp {
   width: 100%;
-
   background-color: #6d68cf;
   padding: 20px;
   border-radius: 15px;
 }
-.wind_vis .temp .title{
+.wind_vis .temp .title {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
-.wind_vis .temp .temp_min{
+.wind_vis .temp .temp_min {
   text-align: center;
-  font-size: 25px;
+  font-size: 37px;
   margin-top: 25%;
 }
-.wind_vis .temp .wind_pm{
-  /* font-size: 10px; */
+.wind_vis .temp .wind_pm {
+  margin-top: 32%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
 }
+.visibility {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  margin-top: 25px;
+  background-color: #6d68cf;
+  border-radius: 15px;
+  font-family: var(--Montseart);
+  color: white;
+  text-align: center;
+}
+.visibility .item p {
+  margin: 20px 10px;
+}
+.visibility .item i {
+  font-size: 35px;
+}
+
+/* Footer start */
+
+footer {
+  margin-top: 20px;
+}
+footer .copright {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--Montseart);
+  font-weight: 500;
+  font-size: 12px;
+  color: white;
+}
+.copright span{
+  margin-top: 8px;
+}
+.copright a{
+  text-decoration: none;
+  color: white;
+}
+.copright a img {
+  width: 80px;
+}
+
+/* Footer end */
