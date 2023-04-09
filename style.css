@@ -71,6 +71,12 @@ nav button {
   color: black;
 }
 
+.err{
+  color: white;
+  text-align: center;
+  margin: 22%;
+}
+
 .wrapper {
   display: flex;
   gap: 30px;
@@ -101,6 +107,7 @@ nav button {
   font-size: 80px;
   font-weight: bold;
 }
+.temperature p
 .min_max {
   font-size: 30px;
 }
@@ -208,5 +215,4 @@ footer .copright {
 .copright a img {
   width: 80px;
 }
-
 /* Footer end */
