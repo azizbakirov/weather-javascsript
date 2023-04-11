@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap");
+
 :root {
   --Montserat: "Montserrat", sans-serif;
+  --Orbitron: "Orbitron", sans-serif;
 }
 * {
   margin: 0;
@@ -32,7 +35,6 @@ nav {
   background-color: #292929;
   padding: 10px;
   border-radius: 10px;
-  margin: 10px;
   color: white;
   transition: all 0.3s;
   font-size: 20px;
@@ -43,7 +45,6 @@ nav {
 }
 .country {
   margin-top: 2px;
-  margin-left: 10px;
 }
 .country span {
   margin-left: 5px;
@@ -86,11 +87,12 @@ input:focus {
 }
 .theme {
   cursor: pointer;
-  width: 20%;
   display: flex;
   gap: 10px;
 }
 .toogle {
+  transition: all 0.3s;
+
   width: 80px;
   background-color: #292929;
   padding: 3px;
@@ -105,8 +107,103 @@ input:focus {
   transition: all 0.3s;
   color: red;
   padding: 4px 10px;
-
 }
 /* Theme dark light end*/
 
 /* Navbar end */
+
+/* Main content */
+main {
+  margin-top: 50px;
+}
+.item_weather {
+  display: flex;
+  justify-content: space-between;
+}
+.item_weather .item {
+  background-color: #292929;
+  padding: 20px;
+  width: 120px;
+  border-radius: 15px;
+}
+.today_time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 700;
+}
+.item_weather .today {
+  background-color: #bcd8edbb;
+  width: 30%;
+  color: black;
+}
+.today_weather {
+  margin-top: 30px;
+}
+.temp_gradus {
+  display: flex;
+  justify-content: space-between;
+}
+.temp_gradus img {
+  width: 50%;
+}
+.temp_gradus p {
+  margin-top: 30px;
+  font-family: var(--Orbitron);
+  font-weight: 600;
+  font-size: 70px;
+}
+.weather_func{
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+.wind_temp span{
+  font-weight: 700;
+  margin-left: 10px;
+}
+.weather_icons img{
+  width: 15%;
+  /* margin-top: 5px; */
+}
+.sunrise{
+  font-size: 15px;
+  font-weight: 700;
+  margin-left: 50px;
+}
+.sunrise img{
+  width: 20%;
+}
+.sunrise span{
+  margin-left: 10px;
+}
+.items{
+  padding: 10px;
+  background-color: #292929;
+  width: auto;
+  border-radius: 20px;
+  font-weight: 500;
+}
+.items .wek{
+  text-align: center;
+}
+.wek hr{
+  margin-top: 10px;
+  border: 1px solid #6b6b6bb9;
+}
+.items .week_icon{
+  padding: 15px;
+  margin-top: 70%;
+  width: 100px;
+}
+.items .week_icon img{
+  width: 100%;
+}
+.items .week_temp{
+  text-align: center;
+  margin-top: 60%;
+  font-family: var(--Orbitron);
+  font-size: 35px;
+}
+/* Main content end */
