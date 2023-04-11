@@ -4,142 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Site</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
     <script src="/app.js" defer></script>
-    <title>Weather web site</title>
   </head>
   <body>
     <div class="container">
-      <nav>
-        <div class="logo">
-          <h1>Weather</h1>
-        </div>
-        <div class="search">
-          <form action="">
-            <input type="text" placeholder="Search city" />
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-          </form>
-        </div>
-        <div class="social_media">
-          <a href="instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="github"><i class="fa-brands fa-github"></i></a>
-          <a href="telegram"><i class="fa-brands fa-telegram"></i></a>
-        </div>
-      </nav>
-      <main>
-        <h1 class="err">Loading...</h1>
-        <!-- <div class="wrapper">
-          <div class="weather_city">
-            <span class="city_title"
-              ><i class="fa-solid fa-location-dot"></i> Tashkent UZ</span
-            >
-            <div class="temperature">
-              <span class="temp">18°C</span>
-              <div class="min_max">
-                <span class="temp_max">22°</span>
-                <span class="temp_min">21°</span>
-              </div>
+      <header>
+        <nav>
+          <div class="country_item">
+            <div class="social_media">
+              <a href="telegram"><i class="fa-brands fa-telegram"></i></a>
+              <a href="github"><i class="fa-brands fa-github"></i></a>
             </div>
-            <div class="wind_temp">
-              <div class="wrap winds">
-                <div class="wind_info">
-                  <div class="wind_icon">
-                    <i class="fa-solid fa-wind"></i>
-                  </div>
-                  <div class="speed_title">
-                    <p class="title">Winds</p>
-                    <span>22 km/h</span>
-                  </div>
-                </div>
-              </div>
-              <div class="wrap winds">
-                <div class="wind_info">
-                  <div class="wind_icon">
-                    <i class="fa-solid fa-sun"></i>
-                  </div>
-                  <div class="speed_title">
-                    <p class="title">Visiblity</p>
-                    <span>22</span>
-                  </div>
-                </div>
-              </div>
-              <div class="wrap winds">
-                <div class="wind_info">
-                  <div class="wind_icon">
-                    <i class="fa-solid fa-compass"></i>
-                  </div>
-                  <div class="speed_title">
-                    <p class="title">precipitation</p>
-                    <span>22 km/h</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="bg_img">
-              <img src="" alt="walpaper" />
+            <div class="country">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Tashkent Uzbekistan</span>
             </div>
           </div>
-          <div class="weather_temps">
-            <div class="wind_vis">
-              <div class="temp wind">
-                <span class="title"
-                  ><i class="fa-solid fa-leaf"></i> Title</span
-                >
-                <div class="temp_min">
-                  <span>25°</span>
-                </div>
-                <div class="wind_pm">
-                  <p>12.9 <span>PM25</span></p>
-                  <p>12.9 <span>PM25</span></p>
-                  <p>12.9 <span>PM25</span></p>
-                </div>
-              </div>
-              <div class="temp sunset">
-                <div class="sunset_temp">
-                  <span><i class="fa-sharp fa-solid fa-sun"></i> Quyoshli</span>
-
-                  <span>21</span>
-                </div>
-              </div>
+          <div class="search">
+            <form action="">
+              <input type="text" placeholder="Shahar yoki tuman" />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </form>
+          </div>
+          <div class="theme">
+            <div class="logo">
+              <span>21-sentyabr</span>
             </div>
-            <div class="visibility">
-              <div class="item">
-                <p>Rain</p>
-                <i class="fa-solid fa-cloud-bolt"></i>
-                <p>25°</p>
-              </div>
-              <div class="item">
-                <p>Snow</p>
-                <i class="fa-solid fa-bolt"></i>
-                <p>25°</p>
-              </div>
-              <div class="item">
-                <p>Sun</p>
-                <i class="fa-solid fa-sun"></i>
-                <p>25°</p>
-              </div>
-              <div class="item">
-                <p>Clodus</p>
-                <i class="fa-solid fa-cloud"></i>
-                <p>25°</p>
-              </div>
+            <div class="toogle">
+              <i class="fa-solid fa-moon"></i>
             </div>
           </div>
-        </div>
-         -->
-      </main>
-      <footer>
-        <div class="copright">
-          <span>copyright by <a href="">My link</a></span>
-           <a href="https://openweathermap.org/" target="_blank">
-            <img src="/img/logo opentweather.png" alt="">
-          </a>
-        </div>
-      </footer>
+        </nav>
+      </header>
     </div>
   </body>
 </html>
