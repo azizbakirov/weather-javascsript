@@ -11,7 +11,8 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #101010;
+  transition: all .3s ease;
+  background-color:black;
   color: #cfcfcf;
   font-family: var(--Montserat);
 }
@@ -19,7 +20,11 @@ body {
   width: 1200px;
   margin: 15px auto;
 }
-
+.active{
+  background-color: #bcd8edbb;
+  /* background-color: #bcd8edbb; */
+  color: black;
+}
 /* Navbar */
 nav {
   margin-top: 30px;
@@ -116,6 +121,10 @@ input:focus {
 main {
   margin-top: 50px;
 }
+.name_week p{
+  margin: 20px 0;
+  font-weight: 500;
+}
 .item_weather {
   display: flex;
   justify-content: space-between;
@@ -133,6 +142,7 @@ main {
   font-weight: 700;
 }
 .item_weather .today {
+  /* background-color: #637e94bb; */
   background-color: #bcd8edbb;
   width: 30%;
   color: black;
@@ -206,4 +216,106 @@ main {
   font-family: var(--Orbitron);
   font-size: 35px;
 }
+
+
+/* Map Content */
+.map{
+  margin-top: 50px;
+  display: flex;
+  gap: 25px;
+}
+.map_temp{
+  margin-top: 30px;
+  background-color: #292929;
+  width: 850px;
+  padding: 25px;
+  border-radius: 15px;
+}
+.map_temp img{
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+}
+.map .map_weather p{
+  font-weight: 500;
+}
+.city_temps p{
+  font-weight: 500;
+}
+
+.region{
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #292929;
+  padding: 15px;
+  border-radius: 15px;
+}
+.region_name .city{
+  color: rgba(255, 255, 255, 0.377);
+}
+.region_name h3{
+  padding: 10px 0;
+  font-size: 20px;
+}
+.region_name p{
+  font-size: 15px;
+}
+.region_temp{
+  width: 20%;
+}
+
+.region_temp img{
+  width: 100%;
+}
+
+.region_temp p{
+  text-align: center;
+  font-size: 25px;
+  font-family: var(--Orbitron);
+  font-weight: bold;
+}
+/* Map Content end */
 /* Main content end */
+
+
+/* Footer */
+footer{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #292929;
+}
+.copright, .social{
+  margin-top: 25px;
+}
+.copright p{
+  font-weight: 500;
+  font-size: 15px;
+}
+.copright p span{
+  /* color: #868686; */
+}
+.logo{
+  text-align: center;
+}
+.logo a img{
+  width: 10%;
+}
+.social{
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+.social a{
+  color: white;
+}
+.social a:hover{
+  color: #bcd8edbb;
+}
+.weather_icons img{
+  /* filter: invert(100%); */
+}
+/* Footer end */
