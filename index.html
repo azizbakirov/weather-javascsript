@@ -18,12 +18,22 @@
         <nav>
           <div class="country_item">
             <div class="social_media">
-              <a class="social_nav" href="https://t.me/azizbakirov" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-              <a class="social_nav" href="https://github.com/azizbakirov" target="_blank"><i class="fa-brands fa-github"></i></a>
+              <a
+                class="social_nav"
+                href="https://t.me/azizbakirov"
+                target="_blank"
+                ><i class="fa-brands fa-telegram"></i
+              ></a>
+              <a
+                class="social_nav"
+                href="https://github.com/azizbakirov"
+                target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
             </div>
             <div class="country">
               <i class="fa-solid fa-location-dot"></i>
-              <span>Tashkent Uzbekistan</span>
+              <span id="location"></span>
             </div>
           </div>
           <div class="search">
@@ -34,7 +44,7 @@
           </div>
           <div class="theme">
             <div class="logo">
-              <span>21-sentyabr</span>
+              <span></span>
             </div>
             <div class="toogle">
               <i class="fa-solid fa-sun"></i>
@@ -43,171 +53,184 @@
         </nav>
       </header>
       <main>
-        <div class="name_week">
-          <p>Bugungi / bir haftalik</p>
-        </div>
-        <div class="item_weather">
-          <div class="item today">
-            <div class="today_time">
-              <span>Monday</span>
-              <span>11:42PM</span>
-            </div>
-            <div class="today_weather">
-              <div class="temp_gradus">
-                <p>12°</p>
-                <img src="/icon//Cloudy Night.png" alt="icon weather" />
-              </div>
-              <div class="weather_func">
-                <div class="wind_temp">
-                  <div class="weather_icons">
-                    <img class="img_icons" src="/icon/mini icon/wind.png" alt="" /><span
-                      >- 5%</span
-                    >
-                  </div>
-                  <div class="weather_icons">
-                    <img class="img_icons" src="/icon/mini icon/pressure.png" alt="" /><span
-                      >- 18 MB</span
-                    >
-                  </div>
-                  <div class="weather_icons">
-                    <img class="img_icons" src="/icon/mini icon/humidity.png" alt="" /><span
-                      >- 18%</span
-                    >
-                  </div>
-                </div>
-                <div class="sunrise">
-                  <div>
-                    <img class="img_icons" src="/icon/mini icon/sunrise.png" alt="" /><span
-                      >- 6:18pm</span
-                    >
-                  </div>
-                  <div>
-                    <img class="img_icons" src="/icon/mini icon/sunset.png" alt="" /><span
-                      >- 9:02AM</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="time"><span class="loader"></span></div>
+        <!-- <div class="main_temp">
+          <div class="name_week ">
+            <p>Bugungi / bir haftalik</p>
           </div>
+          <div class="item_weather">
+            <div class="item today">
+              <div class="today_time ">
+                <span id="week" skeleton></span>
+                <span id="time" skeleton></span>
+              </div>
+              <div class="today_weather">
+                <div class="temp_gradus ">
+                  <p id="gradus"></p>
+                  <img src="/icon//Cloudy Night.png" alt="icon weather" />
+                </div>
+                <div class="weather_func ">
+                  <div class="wind_temp">
+                    <div class="weather_icons">
+                      <img
+                        class="img_icons"
+                        src="/icon/mini icon/wind.png"
+                        alt=""
+                      /><span id="wind" class="skeleton"></span>
+                    </div>
+                    <div class="weather_icons">
+                      <img
+                        class="img_icons"
+                        src="/icon/mini icon/pressure.png"
+                        alt=""
+                      /><span id="pressure"></span>
+                    </div>
+                    <div class="weather_icons">
+                      <img
+                        class="img_icons"
+                        src="/icon/mini icon/humidity.png"
+                        alt=""
+                      /><span id="humidity"></span>
+                    </div>
+                  </div>
+                  <div class="sunrise">
+                    <div>
+                      <img
+                        class="img_icons"
+                        src="/icon/mini icon/sunrise.png"
+                        alt=""
+                      /><span id="sunrise"></span>
+                    </div>
+                    <div>
+                      <img
+                        class="img_icons"
+                        src="/icon/mini icon/sunset.png"
+                        alt=""
+                      /><span id="sunset"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <div class="items">
-            <div class="wek">
-              <p>Wednesdey</p>
-              <hr />
-            </div>
-            <div class="week_icon">
-              <img src="/icon/Cloudy Night.png" alt="icon" />
-            </div>
-            <div class="week_temp">
-              <p>21°</p>
-            </div>
-          </div>
-          <div class="items">
-            <div class="wek">
-              <p>Wednesdey</p>
-              <hr />
-            </div>
-            <div class="week_icon">
-              <img src="/icon/Cloudy Night.png" alt="icon" />
-            </div>
-            <div class="week_temp">
-              <p>21°</p>
-            </div>
-          </div>
-          <div class="items">
-            <div class="wek">
-              <p>Wednesdey</p>
-              <hr />
-            </div>
-            <div class="week_icon">
-              <img src="/icon/Cloudy Night.png" alt="icon" />
-            </div>
-            <div class="week_temp">
-              <p>21°</p>
-            </div>
-          </div>
-          <div class="items">
-            <div class="wek">
-              <p>Wednesdey</p>
-              <hr />
-            </div>
-            <div class="week_icon">
-              <img src="/icon/Cloudy Night.png" alt="icon" />
-            </div>
-            <div class="week_temp">
-              <p>21°</p>
-            </div>
-          </div>
-          <div class="items">
-            <div class="wek">
-              <p>Wednesdey</p>
-              <hr />
-            </div>
-            <div class="week_icon">
-              <img src="/icon/Cloudy Night.png" alt="icon" />
-            </div>
-            <div class="week_temp">
-              <p>21°</p>
-            </div>
-          </div>
-          <div class="items">
-            <div class="wek">
-              <p>Wednesdey</p>
-              <hr />
-            </div>
-            <div class="week_icon">
-              <img src="/icon/Cloudy Night.png" alt="icon" />
-            </div>
-            <div class="week_temp">
-              <p>21°</p>
-            </div>
-          </div>
-        </div>
-        <div class="map">
-          <div class="map_weather">
-            <p>Global xarita</p>
-            <div class="map_temp">
-              <img src="/img/tempmap2-600x343.png" alt="" />
-            </div>
-          </div>
-          <div class="city_temps">
-            <p>Boshqa yirik shaharlar</p>
-            <div class="region">
-              <div class="region_name">
-                <p class="city">Uzbekistan</p>
-                <h3>Samrqand</h3>
-                <p>Sunny</p>
+            <div class="items  ">
+              <div class="wek skeleton">
+                <p>Wednesdey</p>
+                <hr />
               </div>
-              <div class="region_temp">
-                <img src="/icon/Cloudy Night.png" alt="" />
-                <p>31C</p>
+              <div class="week_icon skeleton">
+                <img src="/icon/Cloudy Night.png" alt="icon" />
+              </div>
+              <div class="week_temp skeleton">
+                <p>21°</p>
               </div>
             </div>
-            <div class="region">
-              <div class="region_name">
-                <p class="city">Uzbekistan</p>
-                <h3>Andijon</h3>
-                <p>Sunny</p>
+            <div class="items">
+              <div class="wek skeleton">
+                <p>Wednesdey</p>
+                <hr />
               </div>
-              <div class="region_temp">
-                <img src="/icon/Cloudy Night.png" alt="" />
-                <p>31C</p>
+              <div class="week_icon skeleton">
+                <img src="/icon/Cloudy Night.png" alt="icon" />
+              </div>
+              <div class="week_temp">
+                <p>21°</p>
               </div>
             </div>
-            <div class="region">
-              <div class="region_name">
-                <p class="city">Uzbekistan</p>
-                <h3>Xorazim</h3>
-                <p>Sunny</p>
+            <div class="items">
+              <div class="wek">
+                <p>Wednesdey</p>
+                <hr />
               </div>
-              <div class="region_temp">
-                <img src="/icon/Cloudy Night.png" alt="" />
-                <p>31C</p>
+              <div class="week_icon">
+                <img src="/icon/Cloudy Night.png" alt="icon" />
+              </div>
+              <div class="week_temp">
+                <p>21°</p>
+              </div>
+            </div>
+            <div class="items">
+              <div class="wek">
+                <p>Wednesdey</p>
+                <hr />
+              </div>
+              <div class="week_icon">
+                <img src="/icon/Cloudy Night.png" alt="icon" />
+              </div>
+              <div class="week_temp">
+                <p>21°</p>
+              </div>
+            </div>
+            <div class="items">
+              <div class="wek">
+                <p>Wednesdey</p>
+                <hr />
+              </div>
+              <div class="week_icon">
+                <img src="/icon/Cloudy Night.png" alt="icon" />
+              </div>
+              <div class="week_temp">
+                <p>21°</p>
+              </div>
+            </div>
+            <div class="items">
+              <div class="wek">
+                <p>Wednesdey</p>
+                <hr />
+              </div>
+              <div class="week_icon">
+                <img src="/icon/Cloudy Night.png" alt="icon" />
+              </div>
+              <div class="week_temp">
+                <p>21°</p>
               </div>
             </div>
           </div>
-        </div>
+          <div class="map">
+            <div class="map_weather">
+              <p>Global xarita</p>
+              <div class="map_temp">
+                <img src="/img/tempmap2-600x343.png" alt="" />
+              </div>
+            </div>
+            <div class="city_temps">
+              <p>Boshqa yirik shaharlar</p>
+              <div class="region">
+                <div class="region_name">
+                  <p class="city">Uzbekistan</p>
+                  <h3>Samrqand</h3>
+                  <p>Sunny</p>
+                </div>
+                <div class="region_temp">
+                  <img src="/icon/Cloudy Night.png" alt="" />
+                  <p>31C</p>
+                </div>
+              </div>
+              <div class="region">
+                <div class="region_name">
+                  <p class="city">Uzbekistan</p>
+                  <h3>Andijon</h3>
+                  <p>Sunny</p>
+                </div>
+                <div class="region_temp">
+                  <img src="/icon/Cloudy Night.png" alt="" />
+                  <p>31C</p>
+                </div>
+              </div>
+              <div class="region">
+                <div class="region_name">
+                  <p class="city">Uzbekistan</p>
+                  <h3>Xorazim</h3>
+                  <p>Sunny</p>
+                </div>
+                <div class="region_temp">
+                  <img src="/icon/Cloudy Night.png" alt="" />
+                  <p>31C</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
       </main>
       <footer>
         <div class="copright">
@@ -220,8 +243,12 @@
           <a href="https://www.instagram.com/azizoficiall_"
             ><i class="fa-brands fa-instagram"></i
           ></a>
-          <a href="tel:+998998687845" target="_blank"><i class="fa-solid fa-phone"></i></a>
-          <a href="https://www.instagram.com/azizoficiall_/" target="_blank"><i class="fa-brands fa-discord"></i></a>
+          <a href="tel:+998998687845" target="_blank"
+            ><i class="fa-solid fa-phone"></i
+          ></a>
+          <a href="https://www.instagram.com/azizoficiall_/" target="_blank"
+            ><i class="fa-brands fa-discord"></i
+          ></a>
         </div>
       </footer>
     </div>
