@@ -18,7 +18,6 @@ function apiVisual(city) {
   let key = "CFCZZ3WZPCTHWC6EC6D4TUZT6";
   let urlAPI = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=${key}&unitGroup=metric`;
 
-  console.log("load");
   fetch(urlAPI)
     .then((data) => data.json())
     .then((data) => {
@@ -26,17 +25,19 @@ function apiVisual(city) {
       console.log("succes");
       newDiv(data);
       console.log(data);
+      // console.log(data.alerts[0].description);
     });
 }
 // API key and fetch end
 
+// dark
+
 // html append
 function newDiv(data) {
-  console.log(data.days[0].datetime.substring(5));
-  const logo = document.querySelector(".logo");
-  logo.innerHTML = data.timezone;
+  let today = data.currentConditions;
   const location = document.querySelector("#location");
   location.innerHTML = data.resolvedAddress;
+
   main.innerHTML = `
     <div class="main_temp">
           <div class="name_week ">
@@ -46,15 +47,12 @@ function newDiv(data) {
             <div class="item today">
               <div class="today_time ">
                 <span id="week">Bugun</span>
-                <span id="time">${data.currentConditions.datetime.substring(
-                  0,
-                  5,
-                )}</span>
+                <span id="time"></span>
               </div>
               <div class="today_weather">
-                <div class="temp_gradus ">
-                  <p>${Math.round(data.currentConditions.temp)}°</p>
-                  <img src="/icon//Cloudy Night.png" alt="icon weather" />
+                <div class="temp_gradus">
+                  <div class="gradus"><p>${Math.round(data.currentConditions.temp)}°</p></div>
+                 <div class="today_icon"> <img class="weather_icon" src="/icon//Cloudy Night.png" alt="icon weather" /></div>
                 </div>
                 <div class="weather_func ">
                   <div class="wind_temp">
@@ -100,13 +98,13 @@ function newDiv(data) {
               </div>
             </div>
 
-            <div class="items  ">
+            <div class="items">
               <div class="wek">
                 <p>${data.days[0].datetime.substring(5)}</p>
                 <hr />
               </div>
               <div class="week_icon">
-                <img src='/icon/Cloudy Night.png' />
+                <img id="item_icon" src='/icon/Cloudy Night.png' />
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[0].temp)}°</p>
@@ -118,7 +116,7 @@ function newDiv(data) {
                 <hr />
               </div>
               <div class="week_icon">
-                <img src="/icon/Cloudy Night.png" alt="icon" />
+                <img id="item_icon" src='/icon/Cloudy Night.png' />
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[1].temp)}°</p>
@@ -130,7 +128,7 @@ function newDiv(data) {
                 <hr />
               </div>
               <div class="week_icon">
-                <img src="/icon/Cloudy Night.png" alt="icon" />
+                <img id="item_icon" src='/icon/Cloudy Night.png' />
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[2].temp)}°</p>
@@ -142,7 +140,7 @@ function newDiv(data) {
                 <hr />
               </div>
               <div class="week_icon">
-                <img src="/icon/Cloudy Night.png" alt="icon" />
+                <img id="item_icon" src='/icon/Cloudy Night.png' />
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[3].temp)}°</p>
@@ -154,7 +152,7 @@ function newDiv(data) {
                 <hr />
               </div>
               <div class="week_icon">
-                <img src="/icon/Cloudy Night.png" alt="icon" />
+                <img id="item_icon" src='/icon/Cloudy Night.png' />
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[4].temp)}°</p>
@@ -166,7 +164,7 @@ function newDiv(data) {
                 <hr />
               </div>
               <div class="week_icon">
-                <img src="/icon/Cloudy Night.png" alt="icon" />
+                <img id="item_icon" src='/icon/Cloudy Night.png' />
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[5].temp)}°</p>
@@ -177,7 +175,30 @@ function newDiv(data) {
             <div class="map_weather">
               <p>Global xarita</p>
               <div class="map_temp">
-                <img src="/img/tempmap2-600x343.png" alt="" />
+                <div className="desc">
+                    <p>Shudring nuqtasi harorati: ${
+                      data.currentConditions.dew
+                    }</p>
+                   <p>His qilinishi: ${data.currentConditions.feelslike}°C</p>
+                   <p>Bulut qoplami: ${data.currentConditions.cloudcover}%</p>
+                   <p>Oy fazasi: ${data.currentConditions.moonphase}</p>
+                    <p>uzoqdagi ob'ektlar ko'rinishi: ${
+                      data.currentConditions.visibility
+                    } miles</p>
+                    <p>Ob havo tavsifi: ${data.description}</p>
+                </div>
+                <div className="temp_desc">
+                   <p>Shudring nuqtasi harorati: ${
+                     data.currentConditions.dew
+                   }</p>
+                  <p>His qilinishi: ${data.currentConditions.feelslike}°C</p>
+                  <p>Bulut qoplami: ${data.currentConditions.cloudcover}%</p>
+                  <p>Oy fazasi: ${data.currentConditions.moonphase}</p>
+                  <p>uzoqdagi ob'ektlar ko'rinishi: ${
+                    data.currentConditions.visibility
+                  } miles</p>
+                  <p>Ob havo tavsifi: ${data.description}</p> 
+                </div>
               </div>
             </div>
             <div class="city_temps">
@@ -219,6 +240,27 @@ function newDiv(data) {
           </div>
         </div>
   `;
+
+  let iconWeather = document.querySelector(".weather_icon");
+  let conWeather = document.querySelector("#time");
+
+console.log(today.icon);
+
+  if (today.icon == "cloudy") {
+    iconWeather.src = "./icon/cloud.png";
+    conWeather.innerHTML = "Bulutli";
+  } else if (today.icon == "partly-cloudy-night") {
+    iconWeather.src = "./icon/Cloudy Night.png";
+    conWeather.innerHTML = "Qisman bulutli";
+  } else if (today.icon == "clear-night") {
+    iconWeather.src = "/icon/claer nigth.png";
+    conWeather.innerHTML = "Toza tun";
+    console.log("yaq");
+  } else if (today.icon == "rain") {
+    iconWeather.src = "/icon/Raining.png";
+    conWeather.innerHTML = "Yomgir";
+    console.log("yaq");
+  }
 }
 
 // GeoLoaction
@@ -229,11 +271,10 @@ function geoLocation() {
   fetch(url)
     .then((data) => data.json())
     .then((data) => {
-      console.log(data);
-      apiVisual(data.city );
+      apiVisual(data.city);
     });
 }
-geoLocation();  
+geoLocation();
 
 // Theme dark/light
 // theme.addEventListener("click", () => {
