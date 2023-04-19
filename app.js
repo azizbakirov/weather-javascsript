@@ -34,7 +34,9 @@ function apiVisual(city) {
 
 // html append
 function newDiv(data) {
-  let today = data.currentConditions;
+  let today = data.currentConditions.icon;
+  let week = data.days[1].icon;
+  console.log(week);
   const location = document.querySelector("#location");
   location.innerHTML = data.resolvedAddress;
 
@@ -51,7 +53,9 @@ function newDiv(data) {
               </div>
               <div class="today_weather">
                 <div class="temp_gradus">
-                  <div class="gradus"><p>${Math.round(data.currentConditions.temp)}°</p></div>
+                  <div class="gradus"><p>${Math.round(
+                    data.currentConditions.temp,
+                  )}°</p></div>
                  <div class="today_icon"> <img class="weather_icon" src="/icon//Cloudy Night.png" alt="icon weather" /></div>
                 </div>
                 <div class="weather_func ">
@@ -100,23 +104,11 @@ function newDiv(data) {
 
             <div class="items">
               <div class="wek">
-                <p>${data.days[0].datetime.substring(5)}</p>
-                <hr />
-              </div>
-              <div class="week_icon">
-                <img id="item_icon" src='/icon/Cloudy Night.png' />
-              </div>
-              <div class="week_temp">
-                <p>${Math.round(data.days[0].temp)}°</p>
-              </div>
-            </div>
-            <div class="items">
-              <div class="wek">
                 <p>${data.days[1].datetime.substring(5)}</p>
                 <hr />
               </div>
               <div class="week_icon">
-                <img id="item_icon" src='/icon/Cloudy Night.png' />
+                <img id="item_icon" alt="no img" />
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[1].temp)}°</p>
@@ -128,7 +120,7 @@ function newDiv(data) {
                 <hr />
               </div>
               <div class="week_icon">
-                <img id="item_icon" src='/icon/Cloudy Night.png' />
+                <img id="item_icon" alt="no img"  />
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[2].temp)}°</p>
@@ -140,7 +132,7 @@ function newDiv(data) {
                 <hr />
               </div>
               <div class="week_icon">
-                <img id="item_icon" src='/icon/Cloudy Night.png' />
+                <img id="item_icon" alt="no img"  />
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[3].temp)}°</p>
@@ -152,7 +144,7 @@ function newDiv(data) {
                 <hr />
               </div>
               <div class="week_icon">
-                <img id="item_icon" src='/icon/Cloudy Night.png' />
+                <img id="item_icon" alt="no img"  />
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[4].temp)}°</p>
@@ -164,10 +156,22 @@ function newDiv(data) {
                 <hr />
               </div>
               <div class="week_icon">
-                <img id="item_icon" src='/icon/Cloudy Night.png' />
+                <img id="item_icon" alt="no img"  />
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[5].temp)}°</p>
+              </div>
+            </div>
+            <div class="items">
+              <div class="wek">
+                <p>${data.days[6].datetime.substring(5)}</p>
+                <hr />
+              </div>
+              <div class="week_icon">
+                <img id="item_icon" alt="no img"  />
+              </div>
+              <div class="week_temp">
+                <p>${Math.round(data.days[6].temp)}°</p>
               </div>
             </div>
           </div>
@@ -241,26 +245,56 @@ function newDiv(data) {
         </div>
   `;
 
-  let iconWeather = document.querySelector(".weather_icon");
-  let conWeather = document.querySelector("#time");
+  function iconsWeath() {
+    let iconWeather = document.querySelector(".weather_icon");
+    let conWeather = document.querySelector("#time");
+    let weekIcon = document.querySelectorAll("#item_icon");
 
-console.log(today.icon);
+    // weekIcon.forEach(item =>{
+    //   // console.log(item);
+    // })
 
-  if (today.icon == "cloudy") {
-    iconWeather.src = "./icon/cloud.png";
-    conWeather.innerHTML = "Bulutli";
-  } else if (today.icon == "partly-cloudy-night") {
-    iconWeather.src = "./icon/Cloudy Night.png";
-    conWeather.innerHTML = "Qisman bulutli";
-  } else if (today.icon == "clear-night") {
-    iconWeather.src = "/icon/claer nigth.png";
-    conWeather.innerHTML = "Toza tun";
-    console.log("yaq");
-  } else if (today.icon == "rain") {
-    iconWeather.src = "/icon/Raining.png";
-    conWeather.innerHTML = "Yomgir";
-    console.log("yaq");
+    for (let i = 0; i < 6; i++) {
+      let daysIcon = data.days[i].icon;
+      // console.log(data.days[i].icon);
+      if (daysIcon == "cloudy-day") {
+        weekIcon[i].src = "./icon/cloud.png";
+        console.log("bulutli");
+      } else if (daysIcon == "partly-cloudy-day") {
+        weekIcon[i].src = "./icon/cloud.png";
+        console.log("bulutli kun");
+      } else if (daysIcon == "clear-day") {
+        weekIcon[i].src = "./icon/sun.png";
+        console.log("toza kun");
+      } else if (daysIcon == "rain") {
+        weekIcon[i].src = "/icon/Raining.png";
+        console.log("yomgir");
+        console.log("yaq");
+      }
+    }
+    console.log(data.days[5]);
+    // console.log(data.days);
+
+    if (today == "cloudy" || week == "cloudy") {
+      iconWeather.src = "./icon/cloud.png";
+      conWeather.innerHTML = "Bulutli";
+    } else if (today == "partly-cloudy-night") {
+      iconWeather.src = "./icon/Cloudy Night.png";
+      conWeather.innerHTML = "Qisman bulutli";
+    } else if (today == "clear-night") {
+      iconWeather.src = "/icon/claer nigth.png";
+      conWeather.innerHTML = "Toza tun";
+      console.log("yaq");
+    } else if (today == "rain") {
+      iconWeather.src = "/icon/Raining.png";
+      conWeather.innerHTML = "Yomgir";
+      console.log("yaq");
+    } else if (today == "partly-cloudy-day") {
+      iconWeather.src = "/icon/Raining.png";
+      conWeather.innerHTML = "Qisman bulutli kun";
+    }
   }
+  iconsWeath();
 }
 
 // GeoLoaction
@@ -333,3 +367,8 @@ form.addEventListener("submit", (e) => {
   form.reset();
 });
 // Search Weather input end
+
+// console.log(geoplugin_city());
+// console.log(geoplugin_region());
+// console.log(geoplugin_areaCode());
+// console.log(geoplugin_city());
