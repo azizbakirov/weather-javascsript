@@ -355,6 +355,9 @@ footer {
   border-radius: 10px;
   background-color: #292929;
 }
+.addres{
+  display: block;
+}
 .copright,
 .social {
   margin-top: 25px;
