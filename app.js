@@ -11,7 +11,7 @@ const inp = document.querySelector("input");
 const socialIcon = document.querySelectorAll(".social_nav");
 const form = document.querySelector("form");
 const main = document.querySelector("main");
-const loader = document.querySelector(".time");
+const loader = document.querySelector(".img_load");
 
 // Geolocation
 function geoLocation() {
@@ -27,17 +27,22 @@ function geoLocation() {
 }
 geoLocation();
 
+// loader
+
+// loader
+
 // API key and fetch
 function apiVisual(city) {
   let key = "CFCZZ3WZPCTHWC6EC6D4TUZT6";
   let urlAPI = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=${key}&unitGroup=metric`;
 
+
   fetch(urlAPI)
     .then((data) => data.json())
     .then((data) => {
-      loader.style.display = "none";
-      newDiv(data);
+
       console.log(data);
+      newDiv(data);
     });
 }
 // API key and fetch end
@@ -45,7 +50,6 @@ function apiVisual(city) {
 // html append
 function newDiv(data) {
   let today = data.currentConditions.icon;
-  // let week = data.days[1].icon;
   const location = document.querySelector("#location");
   location.innerHTML = data.resolvedAddress;
 
