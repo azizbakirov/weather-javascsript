@@ -13,6 +13,20 @@ const form = document.querySelector("form");
 const main = document.querySelector("main");
 const loader = document.querySelector(".time");
 
+// Geolocation
+function geoLocation() {
+  let api = "efa4ff08a21f76";
+  let url = `https://ipinfo.io/json?token=${api}`;
+
+  fetch(url)
+    .then((data) => data.json())
+    .then((data) => {
+      console.log(data);
+      apiVisual(data.city);
+    });
+}
+geoLocation();
+
 // API key and fetch
 function apiVisual(city) {
   let key = "CFCZZ3WZPCTHWC6EC6D4TUZT6";
@@ -24,10 +38,8 @@ function apiVisual(city) {
       loader.style.display = "none";
       newDiv(data);
       console.log(data);
-
     });
 }
-apiVisual(geoplugin_city());
 // API key and fetch end
 
 // html append
@@ -290,47 +302,6 @@ function newDiv(data) {
   iconsWeath();
 }
 
-// Theme dark/light
-// theme.addEventListener("click", () => {
-//   themes();
-//   function themes() {
-//     icon.classList.toggle("fa-moon");
-//     icon.classList.toggle("fa-sun");
-//     body.classList.toggle("active");
-//     if (icon.classList.contains("fa-moon")) {
-//       items.forEach((item) => {
-//         item.style.backgroundColor = "#637e94bb";
-//       });
-//       socialIcon.forEach((item) => {
-//         item.style.backgroundColor = "#637e94bb";
-//       });
-//       inp.style.backgroundColor = "#637e94bb";
-//       inp.style.color = "black";
-//       toggle.style.backgroundColor = "#637e94bb";
-//       mapTemp.style.backgroundColor = "#637e94bb";
-//       todayLight.style.backgroundColor = "#637e94bb";
-//       footer.style.backgroundColor = "#637e94bb";
-//       footer.style.color = "black";
-//       console.log("light");
-//     } else {
-//       items.forEach((item) => {
-//         item.style.backgroundColor = "#292929";
-//       });
-//       socialIcon.forEach((item) => {
-//         item.style.backgroundColor = "#292929";
-//       });
-//       inp.style.backgroundColor = "#292929";
-//       inp.style.color = "white";
-//       toggle.style.backgroundColor = "#292929";
-//       mapTemp.style.backgroundColor = "#292929";
-//       todayLight.style.backgroundColor = "#bcd8edbb";
-//       footer.style.backgroundColor = "#292929";
-//       footer.style.color = "white";
-//       console.log("dark");
-//     }
-//   }
-// });
-
 // Search Weather input
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -352,3 +323,4 @@ form.addEventListener("submit", (e) => {
 // console.log(geoplugin_region());
 // console.log(geoplugin_areaCode());
 // console.log(geoplugin_city());
+// AIzaSyAWLDaBVSBb_TcptXXXEer7yIwDhijgcJw
