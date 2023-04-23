@@ -22,21 +22,18 @@ function apiVisual(city) {
     .then((data) => data.json())
     .then((data) => {
       loader.style.display = "none";
-      console.log("succes");
       newDiv(data);
       console.log(data);
-      // console.log(data.alerts[0].description);
+
     });
 }
+apiVisual(geoplugin_city());
 // API key and fetch end
-
-// dark
 
 // html append
 function newDiv(data) {
   let today = data.currentConditions.icon;
-  let week = data.days[1].icon;
-  console.log(week);
+  // let week = data.days[1].icon;
   const location = document.querySelector("#location");
   location.innerHTML = data.resolvedAddress;
 
@@ -44,6 +41,7 @@ function newDiv(data) {
     <div class="main_temp">
           <div class="name_week ">
             <p>Bugungi / bir haftalik</p>
+            <p class="addres">${data.resolvedAddress}</p>
           </div>
           <div class="item_weather">
             <div class="item today">
@@ -58,7 +56,7 @@ function newDiv(data) {
                   )}°</p></div>
                  <div class="today_icon"> <img class="weather_icon" src="/icon//Cloudy Night.png" alt="icon weather" /></div>
                 </div>
-                <div class="weather_func ">
+                <div class="weather_func">
                   <div class="wind_temp">
                     <div class="weather_icons">
                       <img
@@ -83,20 +81,20 @@ function newDiv(data) {
                     </div>
                   </div>
                   <div class="sunrise">
-                    <div>
+                      <div className="temps">
                       <img
                         class="img_icons"
                         src="/icon/mini icon/sunrise.png"
                         alt=""
                       /><span>${data.currentConditions.sunrise}</span>
-                    </div>
-                    <div>
+                      </div>
+                      <div className="temps">
                       <img
                         class="img_icons"
                         src="/icon/mini icon/sunset.png"
                         alt=""
                       /><span>${data.currentConditions.sunset}</span>
-                    </div>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -215,7 +213,7 @@ function newDiv(data) {
                 </div>
                 <div class="region_temp">
                   <img src="/icon/Cloudy Night.png" alt="" />
-                  <p>31C</p>
+                  <p>31°</p>
                 </div>
               </div>
               <div class="region">
@@ -226,7 +224,7 @@ function newDiv(data) {
                 </div>
                 <div class="region_temp">
                   <img src="/icon/Cloudy Night.png" alt="" />
-                  <p>31C</p>
+                  <p>31°</p>
                 </div>
               </div>
               <div class="region">
@@ -237,7 +235,7 @@ function newDiv(data) {
                 </div>
                 <div class="region_temp">
                   <img src="/icon/Cloudy Night.png" alt="" />
-                  <p>31C</p>
+                  <p>31°</p>
                 </div>
               </div>
             </div>
@@ -250,26 +248,20 @@ function newDiv(data) {
     let conWeather = document.querySelector("#time");
     let weekIcon = document.querySelectorAll("#item_icon");
 
-    // weekIcon.forEach(item =>{
-    //   // console.log(item);
-    // })
-
     for (let i = 0; i < 6; i++) {
       let daysIcon = data.days[i].icon;
+      console.log(daysIcon);
       // console.log(data.days[i].icon);
-      if (daysIcon == "cloudy-day") {
+      if (daysIcon === "cloudy-day") {
         weekIcon[i].src = "./icon/cloud.png";
-        console.log("bulutli");
-      } else if (daysIcon == "partly-cloudy-day") {
-        weekIcon[i].src = "./icon/cloud.png";
-        console.log("bulutli kun");
-      } else if (daysIcon == "clear-day") {
+      } else if (daysIcon === "partly-cloudy-day") {
+        weekIcon[i].src = "./icon/CloudyDay.png";
+      } else if (daysIcon === "clear-day") {
         weekIcon[i].src = "./icon/sun.png";
-        console.log("toza kun");
-      } else if (daysIcon == "rain") {
+      } else if (daysIcon === "rain") {
         weekIcon[i].src = "/icon/Raining.png";
-        console.log("yomgir");
-        console.log("yaq");
+      } else if (daysIcon === "cloudy") {
+        weekIcon[i].src = "./icon/cloud.png";
       }
     }
     console.log(data.days[5]);
@@ -284,31 +276,19 @@ function newDiv(data) {
     } else if (today == "clear-night") {
       iconWeather.src = "/icon/claer nigth.png";
       conWeather.innerHTML = "Toza tun";
-      console.log("yaq");
     } else if (today == "rain") {
       iconWeather.src = "/icon/Raining.png";
       conWeather.innerHTML = "Yomgir";
-      console.log("yaq");
     } else if (today == "partly-cloudy-day") {
-      iconWeather.src = "/icon/Raining.png";
+      iconWeather.src = "/icon/CloudyDay.png";
       conWeather.innerHTML = "Qisman bulutli kun";
+    } else if (today == "clear-day") {
+      iconWeather.src = "/icon/sun.png";
+      conWeather.innerHTML = "Quyoshli";
     }
   }
   iconsWeath();
 }
-
-// GeoLoaction
-function geoLocation() {
-  let tokken = `efa4ff08a21f76`;
-  let url = `https://ipinfo.io/json?token=${tokken}`;
-
-  fetch(url)
-    .then((data) => data.json())
-    .then((data) => {
-      apiVisual(data.city);
-    });
-}
-geoLocation();
 
 // Theme dark/light
 // theme.addEventListener("click", () => {

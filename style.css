@@ -32,9 +32,13 @@ nav {
   justify-content: space-between;
 }
 .country_item {
+  width: 350px;
   margin-top: 7px;
   display: flex;
   gap: 15px;
+}
+.country h3 span{
+  font-size: 10px;
 }
 .social_media a {
   background-color: #292929;
@@ -47,12 +51,6 @@ nav {
 .social_media a:hover {
   background-color: white;
   color: black;
-}
-.country {
-  margin-top: 2px;
-}
-.country span {
-  margin-left: 5px;
 }
 
 /* Search bar */
@@ -79,40 +77,32 @@ input:focus {
 /* Search bar end*/
 
 /* Theme dark light */
-.theme .toogle i {
-  font-size: 20px;
-  background-color: #cfcfcf;
-  color: #101010;
-  border-radius: 100%;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 5px;
-  transition: all 0.3s;
-}
-.theme {
-  cursor: pointer;
+.theme{
+  width: 230px;
   display: flex;
+  justify-content: end;
   gap: 10px;
 }
-.toogle {
-  transition: all 0.3s;
-
-  width: 80px;
+.theme .toogle i {
+  font-size: 20px;
   background-color: #292929;
+  border-radius: 20%;
+  padding: 10px;
+}
+
+.toogle {
   padding: 3px;
   border-radius: 20px;
 }
 .logo {
   font-size: 15px;
-  margin-top: 8px;
+  margin-top: 13px;
+
 }
-.fa-moon {
-  transform: translateX(150%);
-  transition: all 0.3s;
-  color: red;
-  padding: 4px 10px;
+.logo span{
+  width: 200px;
 }
+
 /* Theme dark light end*/
 
 /* Navbar end */
@@ -182,11 +172,11 @@ main {
   /* gap: 40%;  */
   justify-content: space-between;
 }
-.today_icon{
+.today_icon {
   margin-top: 15px;
   width: 40%;
 }
-.today_icon img{
+.today_icon img {
   width: 90%;
 }
 .temp_gradus p {
@@ -306,7 +296,7 @@ main {
   padding: 25px;
   border-radius: 15px;
 }
-.map_temp p{
+.map_temp p {
   padding: 16px 0;
   font-size: 18px;
 }
@@ -352,6 +342,10 @@ main {
 /* Map Content end */
 /* Main content end */
 
+.addres{
+  display: none;
+}
+
 /* Footer */
 footer {
   display: flex;
@@ -372,10 +366,10 @@ footer {
 .copright p span {
   /* color: #868686; */
 }
-.logo {
+.logos {
   text-align: center;
 }
-.logo a img {
+.logos a img {
   width: 10%;
 }
 .social {
@@ -393,3 +387,114 @@ footer {
   /* filter: invert(100%); */
 }
 /* Footer end */
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .container {
+    width: 450px;
+    margin: 15px auto;
+  }
+  .logo {
+    display: none;
+  }
+  .toogle {
+    display: none;
+  }
+  .search input {
+    width: auto;
+  }
+  .search form i {
+    right: -10px;
+    top: -28px;
+  }
+  .name_week{
+    display: flex;
+    justify-content: space-between;
+  }
+  .sunrise .temps{
+    width: 25px;
+  }
+  .map_temp {
+    display: block;
+    width: 100%;
+  }
+  .main_tep {
+    display: none;
+    width: 500px;
+  }
+  .map {
+    display: block;
+  }
+
+  .item_weather {
+    display: block;
+  }
+  .item_weather .today {
+    width: 100%;
+  }
+  .today {
+    width: 100%;
+  }
+  
+  .country {
+    display: none;
+  }
+  .items {
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+  }
+  .wek hr {
+    display: none;
+  }
+  .city_temps {
+    margin-top: 25px;
+  }
+  .items .week_icon {
+    margin-top: 0%;
+  }
+  .items .week_temp {
+    position: relative;
+    bottom: 50%;
+    margin-top: 0%;
+  }
+  .items .wek {
+    text-align: end;
+    position: relative;
+    top: 50%;
+    font-size: 20px;
+  }
+  .city_temps {
+    margin-top: 50px;
+  }
+  .region {
+    margin-top: 20px;
+  }
+  .region_temp{
+    width: 15%;
+  }
+
+  footer {
+    margin-top: 50px;
+    border-radius: 10px 10px 0 0;
+    background-color: #101010;
+  }
+  .copright {
+    margin-top: 0px;
+    font-size: 20px;
+  }
+  .copright p {
+    position: relative;
+    top: 50%;
+  }
+  .copright span {
+    display: none;
+  }
+  .social {
+    gap: 10px;
+  }
+  .logos a img {
+    width: 25%;
+  }
+}
+
+/* Responsive end*/
