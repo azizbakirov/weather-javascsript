@@ -34,16 +34,13 @@ geoLocation();
 // API key and fetch
 function apiVisual(city) {
   let key = "CFCZZ3WZPCTHWC6EC6D4TUZT6";
-  let urlAPI = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=${key}&unitGroup=metric`;
+  let url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=${key}&unitGroup=metric`;
 
-  fetch(urlAPI)
+  fetch(url)
     .then((data) => data.json())
     .then((data) => {
       console.log(data);
       newDiv(data);
-
-     
-
     });
 }
 // API key and fetch end
