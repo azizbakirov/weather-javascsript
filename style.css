@@ -411,7 +411,7 @@ footer {
   .logo {
     display: none;
   }
-  .time{
+  .time {
     margin: 65% 0;
   }
   .theme {
@@ -420,8 +420,11 @@ footer {
   .toogle {
     display: none;
   }
-  .search input {
+  .country_item {
     width: auto;
+  }
+  .search input {
+    width: 100%;
   }
   .search form i {
     right: -10px;
