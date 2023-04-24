@@ -36,13 +36,14 @@ function apiVisual(city) {
   let key = "CFCZZ3WZPCTHWC6EC6D4TUZT6";
   let urlAPI = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=${key}&unitGroup=metric`;
 
-
   fetch(urlAPI)
     .then((data) => data.json())
     .then((data) => {
-
       console.log(data);
       newDiv(data);
+
+     
+
     });
 }
 // API key and fetch end
@@ -245,7 +246,7 @@ function newDiv(data) {
               </div>
               <div class="region">
                 <div class="region_name">
-                  <p class="city">Uzbekistan</p>
+                  <p class="city">${main.resolvedAddress}</p>
                   <h3>Xorazim</h3>
                   <p>Sunny</p>
                 </div>
@@ -280,8 +281,6 @@ function newDiv(data) {
         weekIcon[i].src = "./icon/cloud.png";
       }
     }
-    console.log(data.days[5]);
-    // console.log(data.days);
 
     if (today == "cloudy" || week == "cloudy") {
       iconWeather.src = "./icon/cloud.png";
@@ -328,3 +327,4 @@ form.addEventListener("submit", (e) => {
 // console.log(geoplugin_areaCode());
 // console.log(geoplugin_city());
 // AIzaSyAWLDaBVSBb_TcptXXXEer7yIwDhijgcJw
+
