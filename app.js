@@ -12,6 +12,7 @@ const socialIcon = document.querySelectorAll(".social_nav");
 const form = document.querySelector("form");
 const main = document.querySelector("main");
 const loader = document.querySelector(".img_load");
+const errors = document.querySelector(".error");
 
 // Geolocation
 function geoLocation() {
@@ -41,6 +42,12 @@ function apiVisual(city) {
     .then((data) => {
       console.log(data);
       newDiv(data);
+    })
+    .catch((err) => {
+      errors.classList.toggle("error_active");
+      setTimeout(() => {
+        errors.classList.toggle("error_active");
+      }, 3000);
     });
 }
 // API key and fetch end
@@ -67,7 +74,11 @@ function newDiv(data) {
                 <div class="temp_gradus">
                   <div class="gradus"><p>${Math.round(
                     data.currentConditions.temp,
-                  )}°</p></div>
+                  )}°</p>
+                  <span>His qilinishi ${
+                    data.currentConditions.feelslike
+                  }°C</span>
+                  </div>
                  <div class="today_icon"> <img class="weather_icon" src="/icon//Cloudy Night.png" alt="icon weather" /></div>
                 </div>
                 <div class="weather_func">
@@ -121,6 +132,7 @@ function newDiv(data) {
               </div>
               <div class="week_icon">
                 <img id="item_icon" alt="no img" />
+                <p class="weather_cound"></p>
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[1].temp)}°</p>
@@ -133,6 +145,7 @@ function newDiv(data) {
               </div>
               <div class="week_icon">
                 <img id="item_icon" alt="no img"  />
+                <p class="weather_cound"></p>
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[2].temp)}°</p>
@@ -145,6 +158,7 @@ function newDiv(data) {
               </div>
               <div class="week_icon">
                 <img id="item_icon" alt="no img"  />
+                <p class="weather_cound"></p>
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[3].temp)}°</p>
@@ -157,6 +171,8 @@ function newDiv(data) {
               </div>
               <div class="week_icon">
                 <img id="item_icon" alt="no img"  />
+                <p class="weather_cound"></p>
+
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[4].temp)}°</p>
@@ -169,6 +185,8 @@ function newDiv(data) {
               </div>
               <div class="week_icon">
                 <img id="item_icon" alt="no img"  />
+                <p class="weather_cound"></p>
+
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[5].temp)}°</p>
@@ -181,6 +199,7 @@ function newDiv(data) {
               </div>
               <div class="week_icon">
                 <img id="item_icon" alt="no img"  />
+                <p class="weather_cound"></p>
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[6].temp)}°</p>
@@ -264,7 +283,9 @@ function newDiv(data) {
 
     for (let i = 0; i < 6; i++) {
       let daysIcon = data.days[i].icon;
+      let week = data.days[i].conditions;
       console.log(daysIcon);
+      console.log(week);
       // console.log(data.days[i].icon);
       if (daysIcon === "cloudy-day") {
         weekIcon[i].src = "./icon/cloud.png";
@@ -324,4 +345,3 @@ form.addEventListener("submit", (e) => {
 // console.log(geoplugin_areaCode());
 // console.log(geoplugin_city());
 // AIzaSyAWLDaBVSBb_TcptXXXEer7yIwDhijgcJw
-

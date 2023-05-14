@@ -18,7 +18,7 @@ body {
 }
 .container {
   width: 1200px;
-  margin: 15px auto;
+  margin: 0px auto;
 }
 .active {
   background-color: #bcd8edbb;
@@ -312,7 +312,10 @@ main {
 .city_temps p {
   font-weight: 500;
 }
-
+.weather_cound{
+  margin-top: 10px;
+  text-align: center;
+}
 .region {
   margin-top: 30px;
   display: flex;
@@ -392,11 +395,28 @@ footer {
 .social a:hover {
   color: #bcd8edbb;
 }
-.weather_icons img {
-  /* filter: invert(100%); */
-}
+
 .addres {
   display: none;
+}
+.error_active{
+  transform: translateY(-100px);
+
+}
+.error{
+  position: relative;
+  display: flex;
+  justify-content: end;
+  transition: all .3s ease;
+  z-index: 22;
+}
+.error p{
+  margin-top: 30px;
+  position: absolute;
+  padding: 15px;
+  background-color: #D95252;
+  border-radius: 15px;
+  color: black;
 }
 /* Footer end */
 /* Responsive */
@@ -421,8 +441,9 @@ footer {
     display: none;
   }
   .country_item {
-    width: auto;
+    width: 120px;
   }
+
   .search input {
     width: 100%;
   }
@@ -517,6 +538,10 @@ footer {
   }
   .logos a img {
     width: 25%;
+  }
+  .error{
+    justify-content: center;
+    z-index: 9999;
   }
 }
 
