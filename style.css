@@ -305,7 +305,7 @@ main {
   /* gap: 50px; */
 }
 
-.description{
+.description {
   width: 85%;
 }
 .map_temp p {
@@ -411,10 +411,10 @@ footer {
 }
 .error {
   position: relative;
-  display: flex;  
+  display: flex;
   justify-content: end;
   transition: all 0.3s ease;
-  z-index: 22;    
+  z-index: 22;
 }
 .error p {
   margin-top: 30px;
@@ -431,7 +431,7 @@ footer {
     width: 90%;
     margin: 10px auto;
   }
-  main{
+  main {
     margin-top: 20px;
   }
   .addres {
@@ -545,9 +545,6 @@ footer {
   .social {
     gap: 15px;
   }
-  .social a i{
-    font-size: 50px;
-  }
   .logos a img {
     width: 25%;
   }
@@ -571,7 +568,8 @@ footer {
     display: none;
   }
   .time {
-    margin: 65% 0;
+    position: absolute;
+    top: 50%;
   }
   .theme {
     display: none;
@@ -594,7 +592,6 @@ footer {
     display: flex;
     justify-content: space-between;
     font-size: 12px;
-
   }
   .sunrise .temps {
     /* width: 25px; */
@@ -624,10 +621,10 @@ footer {
     height: 150px;
     margin-top: 10px;
   }
-  .items .week_icon img{
+  .items .week_icon img {
     width: 80%;
   }
-  .week_temp{
+  .week_temp {
     bottom: 100%;
   }
   .wek hr {
@@ -669,6 +666,7 @@ footer {
   }
   .social {
     gap: 5px;
+    font-size: 10px;
   }
   .logos a img {
     width: 25%;
