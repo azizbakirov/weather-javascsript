@@ -22,7 +22,6 @@ function geoLocation() {
   fetch(url)
     .then((data) => data.json())
     .then((data) => {
-      console.log(data);
       apiVisual(data.city);
     });
 }
@@ -40,8 +39,9 @@ function apiVisual(city) {
   fetch(url)
     .then((data) => data.json())
     .then((data) => {
-      console.log(data);
       newDiv(data);
+      console.log(data);
+      console.log(data.currentConditions.winddir);
     })
     .catch((err) => {
       errors.classList.toggle("error_active");
@@ -132,7 +132,6 @@ function newDiv(data) {
               </div>
               <div class="week_icon">
                 <img id="item_icon" alt="no img" />
-                <p class="weather_cound"></p>
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[1].temp)}°</p>
@@ -145,7 +144,6 @@ function newDiv(data) {
               </div>
               <div class="week_icon">
                 <img id="item_icon" alt="no img"  />
-                <p class="weather_cound"></p>
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[2].temp)}°</p>
@@ -158,7 +156,6 @@ function newDiv(data) {
               </div>
               <div class="week_icon">
                 <img id="item_icon" alt="no img"  />
-                <p class="weather_cound"></p>
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[3].temp)}°</p>
@@ -171,7 +168,6 @@ function newDiv(data) {
               </div>
               <div class="week_icon">
                 <img id="item_icon" alt="no img"  />
-                <p class="weather_cound"></p>
 
               </div>
               <div class="week_temp">
@@ -185,7 +181,6 @@ function newDiv(data) {
               </div>
               <div class="week_icon">
                 <img id="item_icon" alt="no img"  />
-                <p class="weather_cound"></p>
 
               </div>
               <div class="week_temp">
@@ -199,7 +194,6 @@ function newDiv(data) {
               </div>
               <div class="week_icon">
                 <img id="item_icon" alt="no img"  />
-                <p class="weather_cound"></p>
               </div>
               <div class="week_temp">
                 <p>${Math.round(data.days[6].temp)}°</p>
@@ -208,7 +202,7 @@ function newDiv(data) {
           </div>
           <div class="map">
             <div class="map_weather">
-              <p>Global xarita</p>
+              <p>Ob xavo malumotlari </p>
               <div class="map_temp">
                 <div className="desc">
                     <p>Shudring nuqtasi harorati: ${
@@ -220,19 +214,22 @@ function newDiv(data) {
                     <p>uzoqdagi ob'ektlar ko'rinishi: ${
                       data.currentConditions.visibility
                     } miles</p>
-                    <p>Ob havo tavsifi: ${data.description}</p>
+                  
+                     <p class="description">Ob xavo tavsifi: ${
+                       data.description
+                     }</p>
                 </div>
                 <div className="temp_desc">
-                   <p>Shudring nuqtasi harorati: ${
-                     data.currentConditions.dew
-                   }</p>
-                  <p>His qilinishi: ${data.currentConditions.feelslike}°C</p>
-                  <p>Bulut qoplami: ${data.currentConditions.cloudcover}%</p>
-                  <p>Oy fazasi: ${data.currentConditions.moonphase}</p>
-                  <p>uzoqdagi ob'ektlar ko'rinishi: ${
-                    data.currentConditions.visibility
-                  } miles</p>
-                  <p>Ob havo tavsifi: ${data.description}</p> 
+                <p>Vaqt Zonasi: "${data.timezone}"</p>
+                   <p>Quyosh Energiyasi: ${
+                     data.currentConditions.solarenergy
+                   } MJ/m2</p>
+                  <p>Quyosh nurlanishi: ${
+                    data.currentConditions.solarradiation
+                  } W/m2</p>
+                    <p>UVindex (ultrabinafsha ta'sir qilinishi): ${
+                      data.currentConditions.uvindex
+                    } UV</p> 
                 </div>
               </div>
             </div>
@@ -284,8 +281,6 @@ function newDiv(data) {
     for (let i = 0; i < 6; i++) {
       let daysIcon = data.days[i].icon;
       let week = data.days[i].conditions;
-      console.log(daysIcon);
-      console.log(week);
       // console.log(data.days[i].icon);
       if (daysIcon === "cloudy-day") {
         weekIcon[i].src = "./icon/cloud.png";
@@ -331,17 +326,9 @@ form.addEventListener("submit", (e) => {
     if (input.length == 0) {
       console.log("eror");
     } else {
-      // console.log(input);
       apiVisual(input);
     }
   }
   search();
   form.reset();
 });
-// Search Weather input end
-
-// console.log(geoplugin_city());
-// console.log(geoplugin_region());
-// console.log(geoplugin_areaCode());
-// console.log(geoplugin_city());
-// AIzaSyAWLDaBVSBb_TcptXXXEer7yIwDhijgcJw

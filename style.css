@@ -99,7 +99,7 @@ input:focus {
   margin-top: 13px;
 }
 .logo span {
-  width: 200px;
+  /* width: 200px; */
 }
 
 /* Theme dark light end*/
@@ -276,6 +276,7 @@ main {
   padding: 15px;
   margin-top: 70%;
   width: 100px;
+  height: 100px;
 }
 .items .week_icon img {
   width: 100%;
@@ -295,12 +296,17 @@ main {
 }
 .map_temp {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-top: 30px;
   background-color: #292929;
   width: 850px;
-  padding: 25px;
+  padding: 20px;
   border-radius: 15px;
+  /* gap: 50px; */
+}
+
+.description{
+  width: 85%;
 }
 .map_temp p {
   padding: 16px 0;
@@ -309,10 +315,11 @@ main {
 .map .map_weather p {
   font-weight: 500;
 }
+
 .city_temps p {
   font-weight: 500;
 }
-.weather_cound{
+.weather_cound {
   margin-top: 10px;
   text-align: center;
 }
@@ -369,7 +376,7 @@ footer {
 }
 .copright,
 .social {
-  margin-top: 25px;
+  margin-top: 15px;
 }
 .copright p {
   font-weight: 500;
@@ -387,7 +394,7 @@ footer {
 .social {
   display: flex;
   gap: 20px;
-  font-size: 20px;
+  font-size: 25px;
 }
 .social a {
   color: white;
@@ -399,22 +406,21 @@ footer {
 .addres {
   display: none;
 }
-.error_active{
+.error_active {
   transform: translateY(-100px);
-
 }
-.error{
+.error {
   position: relative;
-  display: flex;
+  display: flex;  
   justify-content: end;
-  transition: all .3s ease;
-  z-index: 22;
+  transition: all 0.3s ease;
+  z-index: 22;    
 }
-.error p{
+.error p {
   margin-top: 30px;
   position: absolute;
   padding: 15px;
-  background-color: #D95252;
+  background-color: #d95252;
   border-radius: 15px;
   color: black;
 }
@@ -424,6 +430,9 @@ footer {
   .container {
     width: 90%;
     margin: 10px auto;
+  }
+  main{
+    margin-top: 20px;
   }
   .addres {
     display: block;
@@ -456,7 +465,7 @@ footer {
     justify-content: space-between;
   }
   .sunrise .temps {
-    width: 25px;
+    /* width: 25px; */
   }
   .map_temp {
     display: block;
@@ -534,15 +543,139 @@ footer {
     display: none;
   }
   .social {
-    gap: 10px;
+    gap: 15px;
+  }
+  .social a i{
+    font-size: 50px;
   }
   .logos a img {
     width: 25%;
   }
-  .error{
+  .error {
     justify-content: center;
     z-index: 9999;
   }
 }
 
+@media screen and (max-width: 320px) {
+  .container {
+    width: 95%;
+    margin: 10px auto;
+  }
+  .addres {
+    display: block;
+    font-size: 12px;
+    text-align: end;
+  }
+  .logo {
+    display: none;
+  }
+  .time {
+    margin: 65% 0;
+  }
+  .theme {
+    display: none;
+  }
+  .toogle {
+    display: none;
+  }
+  .country_item {
+    width: 120px;
+  }
+
+  .search input {
+    width: 100%;
+  }
+  .search form i {
+    right: -10px;
+    top: -28px;
+  }
+  .name_week {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+
+  }
+  .sunrise .temps {
+    /* width: 25px; */
+  }
+  .map_temp {
+    display: block;
+    width: 100%;
+  }
+  .map {
+    display: block;
+  }
+
+  .item_weather {
+    display: block;
+  }
+  .item_weather .today {
+    width: 100%;
+  }
+  .today {
+    width: 100%;
+  }
+  .country {
+    display: none;
+  }
+  .items {
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+  }
+  .items .week_icon img{
+    width: 80%;
+  }
+  .week_temp{
+    bottom: 100%;
+  }
+  .wek hr {
+    display: none;
+  }
+  .city_temps {
+    margin-top: 25px;
+  }
+  .items .week_icon {
+    margin-top: 0%;
+  }
+  .items .week_temp {
+    position: relative;
+    bottom: 50%;
+    margin-top: 0%;
+  }
+  .items .wek {
+    text-align: end;
+    position: relative;
+    top: 50%;
+    font-size: 20px;
+  }
+  .city_temps {
+    margin-top: 50px;
+  }
+  .region {
+    margin-top: 10px;
+  }
+  .region_temp {
+    width: 15%;
+  }
+  .copright {
+    margin-top: 0px;
+    font-size: 20px;
+  }
+  .copright p {
+    position: relative;
+    top: 50%;
+  }
+  .social {
+    gap: 5px;
+  }
+  .logos a img {
+    width: 25%;
+  }
+  .error {
+    justify-content: center;
+    z-index: 9999;
+  }
+}
 /* Responsive end*/
