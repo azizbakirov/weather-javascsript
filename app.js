@@ -233,9 +233,10 @@ function newDiv(data) {
                 </div>
               </div>
             </div>
-            <div class="city_temps">
+            <div class="city_temps backdrop">
               <p>Boshqa yirik shaharlar</p>
               <div class="region">
+                
                 <div class="region_name">
                   <p class="city">Uzbekistan</p>
                   <h3>Samarqand</h3>
@@ -292,7 +293,14 @@ function newDiv(data) {
         weekIcon[i].src = "/icon/Raining.png";
       } else if (daysIcon === "cloudy") {
         weekIcon[i].src = "./icon/cloud.png";
+      } else if (daysIcon === "wind") {
+        weekIcon[i].src = "./icon/wind.png";
+      } else if (daysIcon === "snow") {
+        weekIcon[i].src = "./icon/snow.png";
+      } else if (daysIcon === "thunder") {
+        weekIcon[i].src = "./icon/thunder.png";
       }
+
     }
 
     if (today == "cloudy" || week == "cloudy") {
