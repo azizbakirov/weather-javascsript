@@ -27,10 +27,6 @@ function geoLocation() {
 }
 geoLocation();
 
-// loader
-
-// loader
-
 // API key and fetch
 function apiVisual(city) {
   let key = "CFCZZ3WZPCTHWC6EC6D4TUZT6";
@@ -75,9 +71,9 @@ function newDiv(data) {
                   <div class="gradus"><p>${Math.round(
                     data.currentConditions.temp,
                   )}°</p>
-                  <span>His qilinishi ${
-                    data.currentConditions.feelslike
-                  }°C</span>
+                  <div class="temp_day">
+                  
+                  <span>Kunduzi: ${data.days[0].tempmax}°C</span></div>
                   </div>
                  <div class="today_icon"> <img class="weather_icon" src="/icon//Cloudy Night.png" alt="icon weather" /></div>
                 </div>
@@ -134,7 +130,7 @@ function newDiv(data) {
                 <img id="item_icon" alt="no img" />
               </div>
               <div class="week_temp">
-                <p>${Math.round(data.days[1].temp)}°</p>
+                <p>${Math.round(data.days[1].tempmax)}°</p>
               </div>
             </div>
             <div class="items">
@@ -146,7 +142,7 @@ function newDiv(data) {
                 <img id="item_icon" alt="no img"  />
               </div>
               <div class="week_temp">
-                <p>${Math.round(data.days[2].temp)}°</p>
+                <p>${Math.round(data.days[2].tempmax)}°</p>
               </div>
             </div>
             <div class="items">
@@ -158,7 +154,7 @@ function newDiv(data) {
                 <img id="item_icon" alt="no img"  />
               </div>
               <div class="week_temp">
-                <p>${Math.round(data.days[3].temp)}°</p>
+                <p>${Math.round(data.days[3].tempmax)}°</p>
               </div>
             </div>
             <div class="items">
@@ -171,7 +167,7 @@ function newDiv(data) {
 
               </div>
               <div class="week_temp">
-                <p>${Math.round(data.days[4].temp)}°</p>
+                <p>${Math.round(data.days[4].tempmax)}°</p>
               </div>
             </div>
             <div class="items">
@@ -184,7 +180,7 @@ function newDiv(data) {
 
               </div>
               <div class="week_temp">
-                <p>${Math.round(data.days[5].temp)}°</p>
+                <p>${Math.round(data.days[5].tempmax)}°</p>
               </div>
             </div>
             <div class="items">
@@ -196,7 +192,7 @@ function newDiv(data) {
                 <img id="item_icon" alt="no img"  />
               </div>
               <div class="week_temp">
-                <p>${Math.round(data.days[6].temp)}°</p>
+                <p>${Math.round(data.days[6].tempmax)}°</p>
               </div>
             </div>
           </div>
@@ -300,7 +296,6 @@ function newDiv(data) {
       } else if (daysIcon === "thunder") {
         weekIcon[i].src = "./icon/thunder.png";
       }
-
     }
 
     if (today == "cloudy" || week == "cloudy") {
